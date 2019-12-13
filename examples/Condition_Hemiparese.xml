@@ -1,0 +1,36 @@
+<Condition>
+    <meta>
+        <profile value="http://fhir.de/StructureDefinition/condition-de-icd10" />
+    </meta>
+    <code>
+        <coding>
+            <extension url="http://fhir.de/StructureDefinition/icd-10-gm-haupt-kreuz">
+                <valueCoding>
+                    <system value="http://fhir.de/CodeSystem/dimdi/icd-10-gm" />
+                    <version value="2019" />
+                    <code value="I63.9" />
+                </valueCoding>
+            </extension>
+            <extension url="http://fhir.de/StructureDefinition/icd-10-gm-stern">
+                <valueCoding>
+                    <system value="http://fhir.de/CodeSystem/dimdi/icd-10-gm" />
+                    <version value="2019" />
+                    <code value="G81.9" />
+                </valueCoding>
+            </extension>
+            <system value="http://fhir.de/CodeSystem/dimdi/icd-10-gm" />
+            <version value="2019"/>
+            <code value="I63.9† G81.9*" />
+            <display value="Durch Hirninfarkt verursachte Hemiparese rechts" />
+        </coding>
+    </code>
+    <bodySite>
+        <coding>
+            <code value="R" />
+            <system value="http://fhir.de/CodeSystem/kbv/s_icd_seitenlokalisation" />
+        </coding>
+    </bodySite>
+    <subject>
+        <reference value="Patient/example" />
+    </subject>
+</Condition>

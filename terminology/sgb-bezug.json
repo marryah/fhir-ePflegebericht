@@ -1,0 +1,106 @@
+{
+  "resourceType": "CodeSystem",
+  "name": "sgb-bezug",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+    ]
+  },
+  "url": "http://platzhalter.de/fhir/Codesystem/sgb-bezug",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "description": "Codesystem für SGB-bezogene Inhalte",
+  "compositional": false,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "sgbi",
+      "display": "SGB I",
+      "definition": "Klasse der SGB I-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbii",
+      "display": "SGB II",
+      "definition": "Klasse der SGB II-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbiii",
+      "display": "SGB III",
+      "definition": "Klasse der SGB III-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbiv",
+      "display": "SGB IV",
+      "definition": "Klasse der SGB IV-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbv",
+      "display": "SGB V",
+      "definition": "Klasse der SGB V-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbvi",
+      "display": "SGB VI",
+      "definition": "Klasse der SGB VI-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbvii",
+      "display": "SGB VII",
+      "definition": "Klasse der SGB VII-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbviii",
+      "display": "SGB VIII",
+      "definition": "Klasse der SGB VIII-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbix",
+      "display": "SGB IX",
+      "definition": "Klasse der SGB IX-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbx",
+      "display": "SGB X",
+      "definition": "Klasse der SGB X-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbxi",
+      "display": "SGB XI",
+      "definition": "Klasse der SGB XI-bezogenen Inhalte"
+    },
+    {
+      "code": "sgbxii",
+      "display": "SGB XII",
+      "definition": "Klasse der SGB XII-bezogenen Inhalte",
+      "concept" : [ 
+        {
+          "code": "sgbxii_01",
+          "display": "Hilfe nach SGB XII",
+          "definition": "Boole'scher Wert, der angibt, ob eine bestimmte Person nach SGB XII unterstützt wird",
+          "property": [
+            {
+              "code": "child",
+              "valueCode": "sgbxii"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "count": 5,
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>sgb-bezug</h2><tt>http://platzhalter.de/fhir/Codesystem/sgb-bezug</tt><p>Codesystem für SGB-bezogene Inhalte</p></div>"
+  },
+  "date": "2019-11-08",
+  "experimental": true,
+  "publisher": "HL7 Deutschland"
+}

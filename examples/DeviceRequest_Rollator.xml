@@ -1,0 +1,14 @@
+<DeviceRequest>
+    <meta>
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSDeviceRequest" />
+    </meta>
+    <status value="active"/>
+    <intent value="order" />
+    <codeReference>
+        <reference value="Device/Rollator" />
+    </codeReference>
+    <subject>
+        <reference value="Patient/example" />
+    </subject>
+    <authoredOn value="2019-11-05" />
+</DeviceRequest>

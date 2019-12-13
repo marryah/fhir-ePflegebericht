@@ -1,0 +1,41 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Codes zur Beschreibung, wie die Verfügung vorlag</h2>
+      <tt>https://eNursingSummary.de/fhir/valueSet/advanceDirectivesType</tt>
+      <p>Codes zur Beschreibung der Art und Weise, wie die Verfügung vorlag</p>
+    </div>
+  </text>
+  <url value="https://eNursingSummary.de/fhir/valueSet/advanceDirectivesType" />
+  <name value="Codes zur Beschreibung, wie die Verfügung vorlag" />
+  <status value="draft" />
+  <contact>
+    <telecom>
+      <system value="email" />
+      <value value="m.przysucha@hs-osnabrueck.de" />
+    </telecom>
+  </contact>
+  <description value="Codes zur Beschreibung des Dokumententyps" />
+  <compose>
+    <include>
+      <system value="http://loinc.org" />
+      <concept>
+        <code value="LA15436-1" />
+        <display value="No informatiomn available" />
+      </concept>
+      <concept>
+        <code value="LA30379-4" />
+        <display value="Original paper document" />
+      </concept>
+      <concept>
+        <code value="LA30380-2" />
+        <display value="Paper copy" />
+      </concept>
+      <concept>
+        <code value="LA26663-7" />
+        <display value="Electronic" />
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

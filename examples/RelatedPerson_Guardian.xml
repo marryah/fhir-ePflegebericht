@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelatedPerson xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSGuardian"/>
+  </meta>
+  <id value="example"/> 
+  <active value="true" />
+  <patient> 
+    <reference value="Patient/example" />
+  </patient>
+  <relationship>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+      <code value="GUARD" />
+    </coding>
+  </relationship>
+  <name> 
+    <use value="official"/> 
+    <family value="Schimanski"/> 
+    <given value="Gertrud"/> 
+  </name> 
+  <telecom>
+    <system value="phone" />
+    <use value="home"/> 
+    <value value="+49 555 5555555"/>
+  </telecom> 
+  <gender value="female"/> 
+  <period>
+    <start value="2019-10-15"/>
+  </period>
+</RelatedPerson>

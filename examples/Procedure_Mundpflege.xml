@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Procedure xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProcedure"/>
+  </meta>
+  <id value="example"/> 
+  <status value="in-progress"/> 
+  <code>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.6.97"/>
+      <code value="10032483"/>
+      <display value="Unterstützung bei der Mundpflege"/>
+    </coding>
+  </code>
+</Procedure> 

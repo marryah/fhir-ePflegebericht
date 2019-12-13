@@ -1,0 +1,23 @@
+<Condition>
+    <meta>
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProblem" />
+    </meta>
+    <!--clinicalStatus>
+        <coding>
+            <code value="active"/>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+        </coding>
+    <
+    <verificationStatus value="confirmed"/-->
+    <code>
+        <coding>
+            <system value="urn:oid:2.16.840.1.113883.6.254" />
+            <version value="2019"/>
+            <code value="B5253.0" />
+            <display value="Schädigung der Stuhlkontinenz nicht vorhanden" />
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/example" />
+    </subject>
+</Condition>

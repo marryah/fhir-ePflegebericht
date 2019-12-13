@@ -1,0 +1,38 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Codes für die unterschiedlichen Verfügungsarten</h2>
+      <tt>https://eNursingSummary.de/fhir/valueSet/AdvanceDirectivesCode</tt>
+      <p>Codes für die unterschiedlichen Verfügungsarten</p>
+    </div>
+  </text>
+  <url value="https://eNursingSummary.de/fhir/valueSet/AdvanceDirectivesCode" />
+  <name value="AdvanceDirectivesCodes" />
+  <title value="Codes für Advance Directives" />
+  <status value="draft" />
+  <contact>
+    <telecom>
+      <system value="email" />
+      <value value="m.przysucha@hs-osnabrueck.de" />
+    </telecom>
+  </contact>
+  <description value="AdvanceDirectives - Codes" />
+  <compose>
+    <include>
+      <system value="http://loinc.org" />
+      <concept>
+        <code value="86533-7" />
+        <display value="Living will" />
+      </concept>
+      <concept>
+        <code value="64298-3" />
+        <display value="Power of attorney" />
+      </concept>
+      <concept>
+        <code value="45468-6" />
+        <display value="Health care durable power attorney" />
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

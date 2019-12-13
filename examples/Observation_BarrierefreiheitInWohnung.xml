@@ -1,0 +1,22 @@
+﻿<Observation>
+    <meta>
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAccessibility" />
+    </meta>
+    <category>
+        <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="social-history"/>
+        </coding>
+    </category>
+    <status value="final"/>
+    <code>
+        <coding>
+            <system value="http://loinc.org" />
+            <code value="93446-3" />
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/example" />
+    </subject>
+    <valueString value="Zum Schlafzimmer und Badezimmer der Eheleute im 1. OG führt eine Treppe mit 17 Stufen." />
+</Observation>

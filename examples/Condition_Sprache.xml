@@ -1,0 +1,20 @@
+﻿<Condition>
+    <meta>
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProblem" />
+    </meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/condition-dueTo">
+        <valueReference>
+            <reference value="Condition/Hirninfarkt"/>
+        </valueReference>
+    </extension>
+    <code>
+        <coding>
+            <system value="http://snomed.info/sct" />
+            <code value="162294008" />
+            <display value="eingeschränkte Sprache"/>
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/example" />
+    </subject>
+</Condition>

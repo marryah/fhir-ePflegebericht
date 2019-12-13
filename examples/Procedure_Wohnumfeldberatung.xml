@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Procedure xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAdvisingSurroundings"/>
+  </meta>
+  <id value="example"/> 
+  <status value="completed"/> 
+  <subject>
+    <reference value="Patient/example" />
+  </subject>
+  <code>
+    <coding>
+      <system value="https://eNursingSummary.de/fhir/CodeSystem/HomeRelatedProcedures"/>
+      <code value="ADV"/>
+      <display value="Advising on home surrounding"/>
+    </coding>
+  </code>
+  <performedDateTime value="2019-11-03"/>
+  <performer>
+    <actor>
+      <reference value="Organisation/1" />
+    </actor>
+  </performer>
+  <performer>
+    <actor>
+      <reference value="Practitioner/FrKirchner" />
+    </actor>
+  </performer>
+  <performer>
+    <actor>
+      <reference value="Practitioner/HrBussmann" />
+    </actor>
+  </performer>
+  <performer>
+    <actor>
+      <reference value="Organization/BeckerHomeCare" />
+    </actor>
+  </performer>
+</Procedure> 

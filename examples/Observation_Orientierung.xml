@@ -1,0 +1,27 @@
+﻿<Observation>
+    <meta>
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAbility" />
+    </meta>
+    <category>
+        <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="activity"/>
+        </coding>
+    </category>
+    <status value="final"/>
+    <code>
+        <coding>
+            <system value="http://loinc.org" />
+            <code value="93443-0" />
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/example" />
+    </subject>
+    <valueCodeableConcept>
+        <coding>
+            <system value="http://snomed.info/sct" />
+            <code value="247663003" />
+        </coding>
+    </valueCodeableConcept>
+</Observation>

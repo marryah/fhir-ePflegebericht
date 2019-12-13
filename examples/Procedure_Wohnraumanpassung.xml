@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Procedure xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHomeModification"/>
+  </meta>
+  <id value="exampleHomeModification"/> 
+  <status value="completed"/> 
+  <subject>
+    <reference value="Patient/example" />
+  </subject>
+  <code>
+    <coding>
+      <system value="https://eNursingSummary.de/fhir/CodeSystem/HomeRelatedProcedures"/>
+      <code value="MOD_APP"/>
+      <display value="Home modification applied"/>
+    </coding>
+  </code>
+  <performedDateTime value="2019-11-06"/>
+  <performer>
+    <actor>
+      <reference value="Practitioner/HrBussmann"/>
+    </actor>
+  </performer>
+</Procedure> 

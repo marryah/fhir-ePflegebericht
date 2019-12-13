@@ -1,0 +1,43 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <meta> 
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/> 
+  </meta> 
+  <url value="https://eNursingSummary.de/fhir/ValueSet/HomeAdjustmentValues" />
+  <name value="Home Adjustment Values"/>
+  <title value="Home Adjustment Values"/>
+  <status value="draft" />
+  <experimental value="true" />
+  <contact>
+    <telecom>
+      <system value="email" />
+      <value value="m.przysucha@hs-osnabrueck.de" />
+    </telecom>
+  </contact>
+  <description value="Codes zur Beschreibung des Dokumententyps" />
+  <compose>
+    <include>
+      <system value="https://eNursingSummary.de/fhir/CodeSystem/HomeRelatedProcedures" />
+      <concept>
+        <code value="MOD" />
+        <display value="Home modification" />
+      </concept>
+      <concept>
+        <code value="MOD_APP" />
+        <display value="Advising on home surrounding" />
+      </concept>
+    </include>
+  </compose>
+  <expansion>
+    <total value="2"/>
+    <contains>
+      <system value="https://eNursingSummary.de/fhir/CodeSystem/HomeRelatedProcedures" />
+      <code value="MOD" />
+      <display value="Home modification" />
+    </contains>
+    <contains>
+      <system value="https://eNursingSummary.de/fhir/CodeSystem/HomeRelatedProcedures" />
+      <code value="MOD_APP" />
+      <display value="Advising on home surrounding" />
+    </contains>
+  </expansion>
+</ValueSet>

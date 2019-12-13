@@ -1,0 +1,33 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Codes zur Beschreibung des Dokumententyps</h2>
+      <tt>https://eNursingSummary.de/fhir/valueSet/NursingSummaryCodes</tt>
+      <p>Codes zur Beschreibung des Dokumententyps</p>
+    </div>
+  </text>
+  <url value="https://eNursingSummary.de/fhir/valueSet/NursingSummaryCodes" />
+  <name value="Codes zur Typisierung des ePflegeberichts" />
+  <status value="draft" />
+  <contact>
+    <telecom>
+      <system value="email" />
+      <value value="m.przysucha@hs-osnabrueck.de" />
+    </telecom>
+  </contact>
+  <description value="Codes zur Beschreibung des Dokumententyps" />
+  <compose>
+    <include>
+      <system value="http://loinc.org" />
+      <concept>
+        <code value="28651-8" />
+        <display value="Pflegerischer Verlegungsbericht" />
+      </concept>
+      <concept>
+        <code value="34745-0" />
+        <display value="Pflegerischer Entlassbrief" />
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

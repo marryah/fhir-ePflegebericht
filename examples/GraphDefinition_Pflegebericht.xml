@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GraphDefinition xmlns="http://hl7.org/fhir">
+    <name value="ePflegebericht"/>
+    <status value="active" />
+    <experimental value="true" />
+    <date value="2019-11-07T9:00"/>
+    <publisher value="Mareike Przysucha, Hochschule Osnabrück, Osnabrück, Germany"/>
+    <start value="Composition"/>
+    <link>
+        <path value=""/>
+    </link>
+</GraphDefinition>

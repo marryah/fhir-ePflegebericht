@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingSummary" />
+  <name value="GeNSNursingSummary" />
+  <status value="draft" />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Composition.type.coding">
+      <path value="Composition.type.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Composition.type.coding:loinc">
+      <path value="Composition.type.coding" />
+      <sliceName value="loinc" />
+      <min value="1" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://eNursingSummary.de/fhir/valueSet/NursingSummaryCodes" />
+      </binding>
+    </element>
+    <element id="Composition.type.coding:IHE-XDS">
+      <path value="Composition.type.coding" />
+      <sliceName value="IHE-XDS" />
+      <max value="1" />
+    </element>
+    <element id="Composition.type.coding:IHE-XDS.system">
+      <path value="Composition.type.coding.system" />
+      <fixedUri value="urn:oid:1.3.6.1.4.1.19376.3.276.1.5.9" />
+    </element>
+    <element id="Composition.type.coding:IHE-XDS.code">
+      <path value="Composition.type.coding.code" />
+      <fixedCode value="PFLG" />
+    </element>
+    <element id="Composition.type.coding:dvmd-kdl">
+      <path value="Composition.type.coding" />
+      <sliceName value="dvmd-kdl" />
+      <max value="1" />
+    </element>
+    <element id="Composition.type.coding:dvmd-kdl.system">
+      <path value="Composition.type.coding.system" />
+      <fixedUri value="http://dvmd.de/fhir/CodeSystem/kdl" />
+    </element>
+    <element id="Composition.type.coding:dvmd-kdl.code">
+      <path value="Composition.type.coding.code" />
+      <fixedCode value="VL160108" />
+    </element>
+    <element id="Composition.category">
+      <path value="Composition.category" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Composition.category.coding">
+      <path value="Composition.category.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Composition.category.coding:loinc">
+      <path value="Composition.category.coding" />
+      <sliceName value="loinc" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Composition.category.coding:loinc.system">
+      <path value="Composition.category.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.category.coding:loinc.code">
+      <path value="Composition.category.coding.code" />
+      <fixedCode value="18842-5" />
+    </element>
+    <element id="Composition.category.coding:IHE-XDS">
+      <path value="Composition.category.coding" />
+      <sliceName value="IHE-XDS" />
+      <max value="1" />
+    </element>
+    <element id="Composition.category.coding:IHE-XDS.system">
+      <path value="Composition.category.coding.system" />
+      <fixedUri value="http://ihe-d.de/CodeSystems/IHEXDSclassCode" />
+    </element>
+    <element id="Composition.category.coding:IHE-XDS.code">
+      <path value="Composition.category.coding.code" />
+      <fixedCode value="BRI" />
+    </element>
+    <element id="Composition.subject">
+      <path value="Composition.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSPatient" />
+      </type>
+    </element>
+    <element id="Composition.title">
+      <path value="Composition.title" />
+      <fixedString value="Deutscher ePflegebericht / German eNursing Summary" />
+    </element>
+    <element id="Composition.section">
+      <path value="Composition.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess">
+      <path value="Composition.section" />
+      <sliceName value="NursingProcess" />
+    </element>
+    <element id="Composition.section:NursingProcess.title">
+      <path value="Composition.section.title" />
+      <fixedString value="Pflegeprozess" />
+    </element>
+    <element id="Composition.section:NursingProcess.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <fixedCode value="34746-8" />
+    </element>
+    <element id="Composition.section:NursingProcess.entry">
+      <path value="Composition.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/NursingProblem" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/NursingGoal" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/NursingProcedure" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section">
+      <path value="Composition.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem">
+      <path value="Composition.section.section" />
+      <sliceName value="NursingProblem" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.title">
+      <path value="Composition.section.section.title" />
+      <fixedString value="Pflegeproblem, -diagnose" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <fixedCode value="27593-3" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.entry">
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section">
+      <path value="Composition.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal">
+      <path value="Composition.section.section.section" />
+      <sliceName value="NursingGoal" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.title">
+      <path value="Composition.section.section.section.title" />
+      <fixedString value="Pflegeziel" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.code.coding.system">
+      <path value="Composition.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.code.coding.code">
+      <path value="Composition.section.section.section.code.coding.code" />
+      <fixedCode value="61146-7" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.entry">
+      <path value="Composition.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Goal" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section">
+      <path value="Composition.section.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention">
+      <path value="Composition.section.section.section.section" />
+      <sliceName value="NursingIntervention" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.entry">
+      <path value="Composition.section.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section">
+      <path value="Composition.section.section.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult">
+      <path value="Composition.section.section.section.section.section" />
+      <sliceName value="NursingResult" />
+      <short value="NursingResult" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult.title">
+      <path value="Composition.section.section.section.section.section.title" />
+      <fixedString value="Pflegeergebnis" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult.entry">
+      <path value="Composition.section.section.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult.section">
+      <path value="Composition.section.section.section.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:Resource">
+      <path value="Composition.section.section.section" />
+      <sliceName value="Resource" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:Resource.title">
+      <path value="Composition.section.section.section.title" />
+      <fixedString value="Ressource, Faehigkeiten des Patienten" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:Resource.code.coding.system">
+      <path value="Composition.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:Resource.code.coding.code">
+      <path value="Composition.section.section.section.code.coding.code" />
+      <fixedCode value="93443-0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:Resource.section:NursingResult">
+      <path value="Composition.section.section.section.section" />
+      <sliceName value="NursingResult" />
+      <short value="NursingResult" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:Resource.section:NursingResult.title">
+      <path value="Composition.section.section.section.section.title" />
+      <fixedString value="Pflegeergebnis" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:Resource.section:NursingResult.section">
+      <path value="Composition.section.section.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <max value="0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention">
+      <path value="Composition.section.section.section" />
+      <sliceName value="NursingIntervention" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.entry">
+      <path value="Composition.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.section">
+      <path value="Composition.section.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.section:NursingResult">
+      <path value="Composition.section.section.section.section" />
+      <sliceName value="NursingResult" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.section:NursingResult.title">
+      <path value="Composition.section.section.section.section.title" />
+      <fixedString value="Pflegeergebnis" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.section:NursingResult.code.coding.system">
+      <path value="Composition.section.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.section:NursingResult.code.coding.code">
+      <path value="Composition.section.section.section.section.code.coding.code" />
+      <fixedCode value="11383-7" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.section:NursingResult.entry">
+      <path value="Composition.section.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.section:NursingResult.section">
+      <path value="Composition.section.section.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment">
+      <path value="Composition.section.section" />
+      <sliceName value="NursingAssessment" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.title">
+      <path value="Composition.section.section.title" />
+      <fixedString value="Pflegeproblem, -diagnose" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <fixedCode value="27593-3" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section">
+      <path value="Composition.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal">
+      <path value="Composition.section.section.section" />
+      <sliceName value="NursingGoal" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.title">
+      <path value="Composition.section.section.section.title" />
+      <fixedString value="Pflegeziel" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.code.coding.system">
+      <path value="Composition.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.code.coding.code">
+      <path value="Composition.section.section.section.code.coding.code" />
+      <fixedCode value="61146-7" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.entry">
+      <path value="Composition.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Goal" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section">
+      <path value="Composition.section.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention">
+      <path value="Composition.section.section.section.section" />
+      <sliceName value="NursingIntervention" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.entry">
+      <path value="Composition.section.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section">
+      <path value="Composition.section.section.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section:NursingResult">
+      <path value="Composition.section.section.section.section.section" />
+      <sliceName value="NursingResult" />
+      <short value="NursingResult" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section:NursingResult.title">
+      <path value="Composition.section.section.section.section.section.title" />
+      <fixedString value="Pflegeergebnis" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section:NursingResult.entry">
+      <path value="Composition.section.section.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section:NursingResult.section">
+      <path value="Composition.section.section.section.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:Resource">
+      <path value="Composition.section.section.section" />
+      <sliceName value="Resource" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:Resource.title">
+      <path value="Composition.section.section.section.title" />
+      <fixedString value="Ressource, Faehigkeiten des Patienten" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:Resource.code.coding.system">
+      <path value="Composition.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:Resource.code.coding.code">
+      <path value="Composition.section.section.section.code.coding.code" />
+      <fixedCode value="93443-0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:Resource.section:NursingResult">
+      <path value="Composition.section.section.section.section" />
+      <sliceName value="NursingResult" />
+      <short value="NursingResult" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:Resource.section:NursingResult.title">
+      <path value="Composition.section.section.section.section.title" />
+      <fixedString value="Pflegeergebnis" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:Resource.section:NursingResult.section">
+      <path value="Composition.section.section.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <max value="0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention">
+      <path value="Composition.section.section.section" />
+      <sliceName value="NursingIntervention" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.entry">
+      <path value="Composition.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.section">
+      <path value="Composition.section.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.section:NursingResult">
+      <path value="Composition.section.section.section.section" />
+      <sliceName value="NursingResult" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.section:NursingResult.title">
+      <path value="Composition.section.section.section.section.title" />
+      <fixedString value="Pflegeergebnis" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.section:NursingResult.code.coding.system">
+      <path value="Composition.section.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.section:NursingResult.code.coding.code">
+      <path value="Composition.section.section.section.section.code.coding.code" />
+      <fixedCode value="11383-7" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.section:NursingResult.entry">
+      <path value="Composition.section.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.section:NursingResult.section">
+      <path value="Composition.section.section.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal">
+      <path value="Composition.section.section" />
+      <sliceName value="NursingGoal" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.title">
+      <path value="Composition.section.section.title" />
+      <fixedString value="Pflegeziel" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <fixedCode value="61146-7" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.entry">
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Goal" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section">
+      <path value="Composition.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention">
+      <path value="Composition.section.section.section" />
+      <sliceName value="NursingIntervention" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.entry">
+      <path value="Composition.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.section">
+      <path value="Composition.section.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.section:NursingResult">
+      <path value="Composition.section.section.section.section" />
+      <sliceName value="NursingResult" />
+      <short value="NursingResult" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.section:NursingResult.title">
+      <path value="Composition.section.section.section.section.title" />
+      <fixedString value="Pflegeergebnis" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.section:NursingResult.entry">
+      <path value="Composition.section.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.section:NursingResult.section">
+      <path value="Composition.section.section.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention">
+      <path value="Composition.section.section" />
+      <sliceName value="NursingIntervention" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.entry">
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.section">
+      <path value="Composition.section.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.section:NursingResult">
+      <path value="Composition.section.section.section" />
+      <sliceName value="NursingResult" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.section:NursingResult.title">
+      <path value="Composition.section.section.section.title" />
+      <fixedString value="Pflegeergebnis" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.section:NursingResult.code.coding.system">
+      <path value="Composition.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.section:NursingResult.code.coding.code">
+      <path value="Composition.section.section.section.code.coding.code" />
+      <fixedCode value="11383-7" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.section:NursingResult.entry">
+      <path value="Composition.section.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+      </type>
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.section:NursingResult.section">
+      <path value="Composition.section.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:SocialInformation">
+      <path value="Composition.section" />
+      <sliceName value="SocialInformation" />
+    </element>
+    <element id="Composition.section:SocialInformation.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:SocialInformation.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <fixedCode value="29762-2" />
+    </element>
+    <element id="Composition.section:SocialInformation.code.text">
+      <path value="Composition.section.code.text" />
+      <fixedString value="Social history" />
+    </element>
+    <element id="Composition.section:SocialInformation.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:SocialInformation.entry:SocialInformation">
+      <path value="Composition.section.entry" />
+      <sliceName value="SocialInformation" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSSocial" />
+      </type>
+    </element>
+    <element id="Composition.section:SocialInformation.entry:SocialInformation.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:SocialInformation.entry:SocialInformation.type">
+      <path value="Composition.section.entry.type" />
+      <min value="1" />
+      <fixedUri value="SocialInformation" />
+    </element>
+    <element id="Composition.section:SocialInformation.entry:OccupationHx">
+      <path value="Composition.section.entry" />
+      <sliceName value="OccupationHx" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSOccupation" />
+      </type>
+    </element>
+    <element id="Composition.section:SocialInformation.entry:OccupationHx.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:SocialInformation.entry:OccupationHx.type">
+      <path value="Composition.section.entry.type" />
+      <min value="1" />
+      <fixedUri value="OccupationHx" />
+    </element>
+    <element id="Composition.section:SocialInformation.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:HomeCareStatus">
+      <path value="Composition.section" />
+      <sliceName value="HomeCareStatus" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.title">
+      <path value="Composition.section.title" />
+      <label value="Homecare Status" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <fixedCode value="85204-6" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.section">
+      <path value="Composition.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:HomeCareStatus.section:Hilfsmittel">
+      <path value="Composition.section.section" />
+      <sliceName value="Hilfsmittel" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.section:Wohnform">
+      <path value="Composition.section.section" />
+      <sliceName value="Wohnform" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.section:Barrierefreiheit">
+      <path value="Composition.section.section" />
+      <sliceName value="Barrierefreiheit" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.section:Barrierefreiheit.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.section:Barrierefreiheit.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <fixedCode value="93445-5" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.section:Barrierefreiheit.entry">
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHomeEntrance" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAccessibility" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHomeModification" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAdvisingSurroundings" />
+      </type>
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments">
+      <path value="Composition.section" />
+      <sliceName value="ReferenceToLegalDocuments" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.title">
+      <path value="Composition.section.title" />
+      <fixedString value="Sozialrechtliche Informationen / Reference to legal documents" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <fixedCode value="45473-6" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.entry">
+      <path value="Composition.section.entry" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section">
+      <path value="Composition.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AppointmentGuardian">
+      <path value="Composition.section.section" />
+      <sliceName value="AppointmentGuardian" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AppointmentGuardian.title">
+      <path value="Composition.section.section.title" />
+      <fixedString value="Gesetzlicher Betreuer" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AppointmentGuardian.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AppointmentGuardian.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <fixedCode value="93449-7" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AppointmentGuardian.entry">
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSGuardian" />
+      </type>
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AppointmentGuardian.section">
+      <path value="Composition.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives">
+      <path value="Composition.section.section" />
+      <sliceName value="AdvanceDirectives" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <fixedCode value="42348-3" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.entry">
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAdvanceDirective" />
+      </type>
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.section">
+      <path value="Composition.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII">
+      <path value="Composition.section.section" />
+      <sliceName value="HelpSGBXII" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.title">
+      <path value="Composition.section.section.title" />
+      <fixedString value="Hilfe nach SBG XII" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.section">
+      <path value="Composition.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel">
+      <path value="Composition.section.section" />
+      <sliceName value="NursingLevel" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel.title">
+      <path value="Composition.section.section.title" />
+      <fixedString value="Pflegegrad" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <fixedCode value="85950-4" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel.entry">
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.de/StructureDefinition/observation-pflegestufe" />
+      </type>
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel.section">
+      <path value="Composition.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:MedicalInformation">
+      <path value="Composition.section" />
+      <sliceName value="MedicalInformation" />
+    </element>
+    <element id="Composition.section:MedicalInformation.title">
+      <path value="Composition.section.title" />
+      <fixedString value="Medizinische Informationen / Medical Information" />
+    </element>
+    <element id="Composition.section:MedicalInformation.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:MedicalInformation.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <fixedCode value="28616-1" />
+    </element>
+    <element id="Composition.section:MedicalInformation.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:MedicalInformation.entry">
+      <path value="Composition.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="reference" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Composition.section:MedicalInformation.entry:Diagnoses">
+      <path value="Composition.section.entry" />
+      <sliceName value="Diagnoses" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.de/StructureDefinition/condition-de-icd10" />
+      </type>
+    </element>
+    <element id="Composition.section:MedicalInformation.entry:Medications">
+      <path value="Composition.section.entry" />
+      <sliceName value="Medications" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Medication" />
+      </type>
+    </element>
+    <element id="Composition.section:MedicalInformation.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

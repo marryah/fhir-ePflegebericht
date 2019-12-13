@@ -1,0 +1,23 @@
+﻿<Observation>
+    <meta>
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSOccupation" />
+    </meta>
+    <category>
+        <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="social-history"/>
+        </coding>
+    </category>
+    <status value="final"/>
+    <code>
+        <coding>
+            <system value="http://loinc.org" />
+            <code value="11340-7" />
+            <display value="Occupation Hx Reported" />            
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/example" />
+    </subject>
+    <valueString value="bis zur Verrentung als Tischler tätig" />
+</Observation>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patient xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSPatient"/>
+  </meta>
+  <id value="example"/> 
+  <extension url="http://hl7.org/fhir/StructureDefinition/patient-religion">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/StructureDefinition/patient-religion"/>
+        <code value="1041" />
+        <display value="Roman Catholic Church" />
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <text> 
+    <status value="generated"/> 
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <table> 
+        <tbody> 
+          <tr> 
+            <td> Name</td> 
+            <td> Hubert 
+              <b> Schimanski</b>
+            </td> 
+          </tr> 
+          <tr> 
+            <td> Adresse</td> 
+            <td> Gerade Straße 16, 32132 Halle</td> 
+          </tr> 
+          <tr> 
+            <td> Contacts</td> 
+            <td> Home: unknown</td> 
+          </tr> 
+          <tr> 
+            <td> Id</td> 
+            <td> t.b.d.</td> 
+          </tr> 
+        </tbody> 
+      </table> 
+    </div> 
+  </text> 
+  <active value="true"/> 
+  <name> 
+    <use value="official"/> 
+    <family value="Schimanski"/> 
+    <given value="Hubert"/> 
+  </name> 
+  <telecom> 
+    <use value="home"/> 
+    <!--    home communication details aren't known    -->
+  </telecom> 
+  <!--    use FHIR code system for male / female    -->
+  <gender value="male"/> 
+  <maritalStatus>
+    <coding>
+        <code value="M"/>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"/>
+    </coding>
+  </maritalStatus>
+  <birthDate value="1939-04-27" />
+  <deceasedBoolean value="false"/> 
+  <address> 
+    <use value="home"/> 
+    <type value="both"/> 
+    <text value="Gerade Straße 16, 32132 Halle"/> 
+    <line value="Gerade Straße 16"/> 
+    <city value="Halle"/> 
+    <postalCode value="32132"/> 
+  </address> 
+  <contact> 
+    <relationship> 
+      <coding> 
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0131"/> 
+        <code value="N"/> 
+      </coding> 
+    </relationship> 
+    <name> 
+      <family value="Schimanski" />
+      <given value="Gertrud"/> 
+    </name> 
+    <address> 
+        <use value="home"/> 
+        <type value="both"/> 
+        <text value="Gerade Straße 16, 32132 Halle"/> 
+        <line value="Gerade Straße 16"/> 
+        <city value="Halle"/> 
+        <postalCode value="32132"/> 
+    </address> 
+    <gender value="female"/> 
+  </contact> 
+  <managingOrganization> 
+    <reference value="Organization/1"/> 
+  </managingOrganization> 
+</Patient> 

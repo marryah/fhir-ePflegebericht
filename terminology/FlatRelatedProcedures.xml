@@ -1,0 +1,24 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <url value="https://eNursingSummary.de/fhir/CodeSystem/FlatRelatedProcedures" />
+  <name value="FlatRelatedProcedures" />
+  <title value="Flat/Home related procedures" />
+  <content value="fragment" />
+  <status value="draft" />
+  <experimental value="true" />
+  <concept>
+    <code value="MOD" />
+    <display value="Home modification" />
+    <designation>
+      <language value="DE" />
+      <value value="Wohnraumanpassung" />
+    </designation>
+  </concept>
+  <concept>
+    <code value="ADV" />
+    <display value="Advising on home surrounding" />
+    <designation>
+      <language value="DE" />
+      <value value="Wohnumfeldberatung" />
+    </designation>
+  </concept>
+</CodeSystem>

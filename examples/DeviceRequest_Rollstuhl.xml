@@ -1,0 +1,17 @@
+<DeviceRequest>
+    <meta>
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSDeviceRequest" />
+    </meta>
+    <status value="active"/>
+    <intent value="plan" />
+    <codeCodeableConcept>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="58938008"/>
+            <display value="Rollstuhl"/>
+        </coding>
+    </codeCodeableConcept>
+    <subject>
+        <reference value="Patient/example" />
+    </subject>
+</DeviceRequest>

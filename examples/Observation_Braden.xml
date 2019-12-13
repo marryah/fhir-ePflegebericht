@@ -1,0 +1,23 @@
+﻿<Observation>
+    <meta>
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingAssessment" />
+    </meta>
+    <category>
+        <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="survey"/>
+        </coding>
+    </category>
+    <status value="final"/>
+    <code>
+        <coding>
+            <system value="http://loinc.org" />
+            <code value="38227-5" />
+            <display value="Braden-Skala - Gesamtwert" />            
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/example" />
+    </subject>
+    <valueInteger value="17" />
+</Observation>

@@ -1,0 +1,28 @@
+<NamingSystem>
+    <id value="ccc"/>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            Code System "Clinical Care Classification (CCC)"
+            <ol>
+                <li>OID: 2.16.840.1.113883.6.236 </li>
+                <li>URI: https://www.sabacare.com/</li>
+            </ol> 
+        </div> 
+    </text> 
+    <type value="codesystem"/>
+    <name value="Clinical Care Classification (CCC)"/>
+    <status value="active"/>
+    <uniqueId>
+        <type value="oid"/> 
+        <value value=" 2.16.840.1.113883.6.236"/>
+    </uniqueId>
+    <uniqueId>
+        <type value="uri"/>
+        <value value="https://www.sabacare.com/"/>
+        <preferred value="true"/>
+        <period>
+            <start value="2015-01-01"/>
+        </period>
+    </uniqueId>
+</NamingSystem>

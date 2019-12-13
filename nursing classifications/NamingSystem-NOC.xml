@@ -1,0 +1,28 @@
+<NamingSystem>
+    <id value="noc"/>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            Code System "Nursing outcome classification (NOC)"
+            <ol>
+                <li>OID: 2.16.840.1.113883.6.15 </li>
+                <li>URI: http://www.nursing.uiowa.edu/cncce/nursing-outcomes-classification-overview</li>
+            </ol> 
+        </div> 
+    </text> 
+    <type value="codesystem"/>
+    <name value="Nursing outcome classification (NOC)"/>
+    <status value="active"/>
+    <uniqueId>
+        <type value="oid"/> 
+        <value value="2.16.840.1.113883.6.15"/>
+    </uniqueId>
+    <uniqueId>
+        <type value="uri"/>
+        <value value="http://www.nursing.uiowa.edu/cncce/nursing-outcomes-classification-overview"/>
+        <preferred value="true"/>
+        <period>
+            <start value="2015-01-01"/>
+        </period>
+    </uniqueId>
+</NamingSystem>
