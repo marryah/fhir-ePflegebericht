@@ -40,6 +40,24 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
   <derivation value="constraint" />
   <differential>
+    <element id="Condition.extension">
+      <path value="Condition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.extension:due-to">
+      <path value="Condition.extension" />
+      <sliceName value="due-to" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/condition-dueTo" />
+      </type>
+    </element>
     <element id="Condition.code.coding">
       <path value="Condition.code.coding" />
       <type>
