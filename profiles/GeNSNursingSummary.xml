@@ -874,6 +874,13 @@
       <path value="Composition.section.section.title" />
       <fixedString value="Hilfe nach SBG XII" />
     </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.entry">
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHelpSGBXII" />
+      </type>
+    </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.section">
       <path value="Composition.section.section.section" />
       <max value="0" />
