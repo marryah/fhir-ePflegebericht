@@ -878,7 +878,7 @@
       <path value="Composition.section.section.entry" />
       <type>
         <code value="Reference" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHelpSGBXII" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHelpSGBXII" />
       </type>
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.section">
