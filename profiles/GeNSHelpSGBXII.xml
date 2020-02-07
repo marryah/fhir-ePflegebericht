@@ -40,6 +40,31 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
   <derivation value="constraint" />
   <differential>
+    <element id="Observation.code.coding">
+      <path value="Observation.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Observation.code.coding:hl7">
+      <path value="Observation.code.coding" />
+      <sliceName value="hl7" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.code.coding:hl7.system">
+      <path value="Observation.code.coding.system" />
+      <fixedUri value="urn:oid:1.2.276.0.76.5.509" />
+    </element>
+    <element id="Observation.code.coding:hl7.code">
+      <path value="Observation.code.coding.code" />
+      <fixedCode value="HPFL" />
+    </element>
     <element id="Observation.subject">
       <path value="Observation.subject" />
       <type>

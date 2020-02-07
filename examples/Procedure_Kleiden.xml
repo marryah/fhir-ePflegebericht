@@ -12,4 +12,7 @@
       <display value="An- und Auskleiden"/>
     </coding>
   </code>
+  <subject>
+    <reference value="Patient/example" />
+  </subject>
 </Procedure> 

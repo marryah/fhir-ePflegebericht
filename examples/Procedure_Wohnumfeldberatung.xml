@@ -15,6 +15,9 @@
       <display value="Advising on home surrounding"/>
     </coding>
   </code>
+  <subject>
+    <reference value="Patient/example" />
+  </subject>
   <performedDateTime value="2019-11-03"/>
   <performer>
     <actor>

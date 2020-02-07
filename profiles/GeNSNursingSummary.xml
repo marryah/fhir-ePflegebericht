@@ -872,7 +872,15 @@
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.title">
       <path value="Composition.section.section.title" />
-      <fixedString value="Hilfe nach SBG XII" />
+      <fixedString value="Hilfe zur Pflege nach SBG XII" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <fixedUri value="urn:oid:1.2.276.0.76.5.509" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <fixedCode value="HPFL" />
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.entry">
       <path value="Composition.section.section.entry" />

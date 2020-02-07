@@ -32,13 +32,59 @@
   <differential>
     <element id="Procedure.code.coding">
       <path value="Procedure.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Procedure.code.coding:apenio">
+      <path value="Procedure.code.coding" />
+      <sliceName value="apenio" />
       <type>
         <code value="Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ApenioCoding" />
+      </type>
+    </element>
+    <element id="Procedure.code.coding:ccc">
+      <path value="Procedure.code.coding" />
+      <sliceName value="ccc" />
+      <type>
+        <code value="Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/CCCCoding" />
+      </type>
+    </element>
+    <element id="Procedure.code.coding:enp">
+      <path value="Procedure.code.coding" />
+      <sliceName value="enp" />
+      <type>
+        <code value="Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
+      </type>
+    </element>
+    <element id="Procedure.code.coding:icnp">
+      <path value="Procedure.code.coding" />
+      <sliceName value="icnp" />
+      <type>
+        <code value="Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICNPCoding" />
+      </type>
+    </element>
+    <element id="Procedure.code.coding:lep">
+      <path value="Procedure.code.coding" />
+      <sliceName value="lep" />
+      <type>
+        <code value="Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/LEPCoding" />
+      </type>
+    </element>
+    <element id="Procedure.code.coding:nic">
+      <path value="Procedure.code.coding" />
+      <sliceName value="nic" />
+      <type>
+        <code value="Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/NICCoding" />
       </type>
     </element>

@@ -15,6 +15,9 @@
       <display value="Home modification applied"/>
     </coding>
   </code>
+  <subject>
+    <reference value="Patient/example" />
+  </subject>
   <performedDateTime value="2019-11-06"/>
   <performer>
     <actor>
