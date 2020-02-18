@@ -7,7 +7,7 @@
     <codeCodeableConcept>
         <coding>
             <system value="http://snomed.info/sct"/>
-            <code value="58938008|Wheelchair:20401003|with=466492009|wheelchair cushion"/>
+            <code value="58938008:20401003=466492009"/>
             <display value="Rollstuhl mit Kissen"/>
         </coding>
     </codeCodeableConcept>
