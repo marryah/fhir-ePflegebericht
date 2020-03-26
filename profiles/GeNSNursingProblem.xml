@@ -62,6 +62,7 @@
       <path value="Condition.code.coding" />
       <type>
         <code value="Coding" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ApenioCoding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/CCCCoding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />

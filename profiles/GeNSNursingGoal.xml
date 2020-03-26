@@ -3,7 +3,7 @@
   <url value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingGoal" />
   <name value="GeNSNursingGoal" />
   <status value="draft" />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="v2" />
     <uri value="http://hl7.org/v2" />
@@ -26,34 +26,64 @@
   <derivation value="constraint" />
   <differential>
     <element id="Goal.category.coding.system">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Goal.category.coding.system" />
       <fixedUri value="http://terminology.hl7.org/CodeSystem/goal-category" />
     </element>
     <element id="Goal.category.coding.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Goal.category.coding.code" />
       <fixedCode value="nursing" />
     </element>
     <element id="Goal.description.coding">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Goal.description.coding" />
       <type>
         <code value="Coding" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
       </type>
     </element>
     <element id="Goal.addresses">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Goal.addresses" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/NutritionOrder" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ServiceRequest" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/RiskAssessment" />
         <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProblem" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingAssessment" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSRiskAssessment" />
       </type>
     </element>
     <element id="Goal.outcomeCode.coding">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Goal.outcomeCode.coding" />
       <type>
         <code value="Coding" />

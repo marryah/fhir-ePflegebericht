@@ -3,7 +3,7 @@
   <url value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSSummaryBundle" />
   <name value="GeNSSummaryBundle" />
   <status value="draft" />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="v2" />
     <uri value="http://hl7.org/v2" />
@@ -30,7 +30,23 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
   <derivation value="constraint" />
   <differential>
+    <element id="Bundle.timestamp">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Bundle.timestamp" />
+      <min value="1" />
+    </element>
     <element id="Bundle.entry">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Bundle.entry" />
       <slicing>
         <discriminator>
@@ -42,6 +58,12 @@
       <min value="2" />
     </element>
     <element id="Bundle.entry:composition">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Bundle.entry" />
       <sliceName value="composition" />
       <min value="1" />
@@ -49,12 +71,20 @@
     </element>
     <element id="Bundle.entry:composition.resource">
       <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <max value="1" />
       <type>
         <code value="Resource" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingSummary" />
       </type>
     </element>
     <element id="Bundle.entry:patient">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Bundle.entry" />
       <sliceName value="patient" />
       <min value="1" />
@@ -67,148 +97,22 @@
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSPatient" />
       </type>
     </element>
-    <element id="Bundle.entry:organization">
-      <path value="Bundle.entry" />
-      <sliceName value="organization" />
-    </element>
-    <element id="Bundle.entry:organization.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Organization" />
-      </type>
-    </element>
-    <element id="Bundle.entry:practitioner">
-      <path value="Bundle.entry" />
-      <sliceName value="practitioner" />
-    </element>
-    <element id="Bundle.entry:practitioner.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://fhir.de/StructureDefinition/practitioner-de-basis" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
-      </type>
-    </element>
-    <element id="Bundle.entry:relatedPerson">
-      <path value="Bundle.entry" />
-      <sliceName value="relatedPerson" />
-    </element>
-    <element id="Bundle.entry:relatedPerson.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSGuardian" />
-      </type>
-    </element>
-    <element id="Bundle.entry:condition">
-      <path value="Bundle.entry" />
-      <sliceName value="condition" />
-    </element>
-    <element id="Bundle.entry:condition.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Condition" />
-        <profile value="http://fhir.de/StructureDefinition/condition-de-icd10" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProblem" />
-      </type>
-    </element>
-    <element id="Bundle.entry:goal">
-      <path value="Bundle.entry" />
-      <sliceName value="goal" />
-    </element>
-    <element id="Bundle.entry:goal.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Goal" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingGoal" />
-      </type>
-    </element>
-    <element id="Bundle.entry:procedure">
-      <path value="Bundle.entry" />
-      <sliceName value="procedure" />
-    </element>
-    <element id="Bundle.entry:procedure.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProcedure" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAdvisingSurroundings" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHomeModification" />
-      </type>
-    </element>
-    <element id="Bundle.entry:observation">
-      <path value="Bundle.entry" />
-      <sliceName value="observation" />
-    </element>
-    <element id="Bundle.entry:observation.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAbility" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAccessibility" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAdvanceDirective" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHomeEntrance" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSLivingSituation" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingAssessment" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSOccupation" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSSocial" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Observation" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHelpSGBXII" />
-      </type>
-    </element>
-    <element id="Bundle.entry:deviceRequest">
-      <path value="Bundle.entry" />
-      <sliceName value="deviceRequest" />
-    </element>
-    <element id="Bundle.entry:deviceRequest.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/DeviceRequest" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSDeviceRequest" />
-      </type>
-    </element>
-    <element id="Bundle.entry:device">
-      <path value="Bundle.entry" />
-      <sliceName value="device" />
-    </element>
-    <element id="Bundle.entry:device.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Device" />
-      </type>
-    </element>
-    <element id="Bundle.entry:medication">
-      <path value="Bundle.entry" />
-      <sliceName value="medication" />
-    </element>
-    <element id="Bundle.entry:medication.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Medication" />
-      </type>
-    </element>
-    <element id="Bundle.entry:media">
-      <path value="Bundle.entry" />
-      <sliceName value="media" />
-    </element>
-    <element id="Bundle.entry:media.resource">
-      <path value="Bundle.entry.resource" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Media" />
-      </type>
-    </element>
     <element id="Bundle.entry:other">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Bundle.entry" />
       <sliceName value="other" />
+    </element>
+    <element id="Bundle.entry:other.resource">
+      <path value="Bundle.entry.resource" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+      </type>
     </element>
   </differential>
 </StructureDefinition>
