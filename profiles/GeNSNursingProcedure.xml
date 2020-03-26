@@ -3,7 +3,7 @@
   <url value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProcedure" />
   <name value="GeNSNursingProcedure" />
   <status value="draft" />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
     <uri value="http://hl7.org/fhir/workflow" />
@@ -31,6 +31,12 @@
   <derivation value="constraint" />
   <differential>
     <element id="Procedure.code.coding">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Procedure.code.coding" />
       <slicing>
         <discriminator>
@@ -41,6 +47,12 @@
       </slicing>
     </element>
     <element id="Procedure.code.coding:apenio">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Procedure.code.coding" />
       <sliceName value="apenio" />
       <type>
@@ -49,6 +61,12 @@
       </type>
     </element>
     <element id="Procedure.code.coding:ccc">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Procedure.code.coding" />
       <sliceName value="ccc" />
       <type>
@@ -57,6 +75,12 @@
       </type>
     </element>
     <element id="Procedure.code.coding:enp">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Procedure.code.coding" />
       <sliceName value="enp" />
       <type>
@@ -65,6 +89,12 @@
       </type>
     </element>
     <element id="Procedure.code.coding:icnp">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Procedure.code.coding" />
       <sliceName value="icnp" />
       <type>
@@ -73,6 +103,12 @@
       </type>
     </element>
     <element id="Procedure.code.coding:lep">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Procedure.code.coding" />
       <sliceName value="lep" />
       <type>
@@ -81,6 +117,12 @@
       </type>
     </element>
     <element id="Procedure.code.coding:nic">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Procedure.code.coding" />
       <sliceName value="nic" />
       <type>
@@ -89,6 +131,12 @@
       </type>
     </element>
     <element id="Procedure.reasonReference">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Procedure.reasonReference" />
       <type>
         <code value="Reference" />
@@ -102,6 +150,12 @@
       </type>
     </element>
     <element id="Procedure.outcome.coding">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
       <path value="Procedure.outcome.coding" />
       <type>
         <code value="Coding" />
