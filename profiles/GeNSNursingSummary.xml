@@ -15,8 +15,9 @@
       <constraint>
         <key value="composition-bundle-1" />
         <severity value="error" />
-        <human value="Bundle muss mindestens die in der Composition referenzierten Ressourcen enthalten" />
+        <human value="Das umgebende Bundle muss mindestens die in der Composition referenzierten Ressourcen enthalten" />
         <expression value="Bundle.entry.descendants().reference.distinct().subsetOf(%resource.entry.fullUrl)" />
+        <source value="Composition" />
       </constraint>
     </element>
     <element id="Composition.type.coding">
@@ -1260,27 +1261,6 @@
         <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSSocial" />
       </type>
     </element>
-    <element id="Composition.section:SocialInformation.entry:SocialInformation.reference">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Composition.section.entry.reference" />
-      <min value="1" />
-    </element>
-    <element id="Composition.section:SocialInformation.entry:SocialInformation.type">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Composition.section.entry.type" />
-      <min value="1" />
-      <fixedUri value="SocialInformation" />
-    </element>
     <element id="Composition.section:SocialInformation.entry:OccupationHx">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -1294,27 +1274,6 @@
         <code value="Reference" />
         <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSOccupation" />
       </type>
-    </element>
-    <element id="Composition.section:SocialInformation.entry:OccupationHx.reference">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Composition.section.entry.reference" />
-      <min value="1" />
-    </element>
-    <element id="Composition.section:SocialInformation.entry:OccupationHx.type">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Composition.section.entry.type" />
-      <min value="1" />
-      <fixedUri value="OccupationHx" />
     </element>
     <element id="Composition.section:SocialInformation.section">
       <path value="Composition.section.section" />
@@ -1387,9 +1346,36 @@
       <path value="Composition.section.section" />
       <sliceName value="Hilfsmittel" />
     </element>
+    <element id="Composition.section:HomeCareStatus.section:Hilfsmittel.entry">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSDeviceRequest" />
+      </type>
+    </element>
     <element id="Composition.section:HomeCareStatus.section:Wohnform">
       <path value="Composition.section.section" />
       <sliceName value="Wohnform" />
+    </element>
+    <element id="Composition.section:HomeCareStatus.section:Wohnform.entry">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSLivingSituation" />
+      </type>
     </element>
     <element id="Composition.section:HomeCareStatus.section:Barrierefreiheit">
       <path value="Composition.section.section" />
@@ -1558,6 +1544,12 @@
     <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives">
       <path value="Composition.section.section" />
       <sliceName value="AdvanceDirectives" />
+      <constraint>
+        <key value="directive-custodian-1" />
+        <severity value="warning" />
+        <human value="Wenn ein Custodian angeben ist, muss es auch eine Verfügung geben." />
+        <xpath value="entry:custodian = null OR entry:directive.reference != null" />
+      </constraint>
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.code.coding.system">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1587,9 +1579,46 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <type>
         <code value="Reference" />
         <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSAdvanceDirective" />
+      </type>
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.entry:directive">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.entry" />
+      <sliceName value="directive" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.entry:custodian">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.entry" />
+      <sliceName value="custodian" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CareTeam" />
       </type>
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.section">
@@ -1689,9 +1718,46 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.entry" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="reference" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
       <type>
         <code value="Reference" />
         <targetProfile value="http://fhir.de/StructureDefinition/observation-pflegestufe" />
+      </type>
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel.entry:level">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.entry" />
+      <sliceName value="level" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.de/StructureDefinition/observation-pflegestufe" />
+      </type>
+    </element>
+    <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel.entry:performer">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.entry" />
+      <sliceName value="performer" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
       </type>
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel.section">
@@ -1764,7 +1830,7 @@
           <type value="profile" />
           <path value="reference" />
         </discriminator>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
     </element>
     <element id="Composition.section:MedicalInformation.entry:Diagnoses">
@@ -1853,7 +1919,6 @@
       <min value="1" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
       </type>
     </element>
