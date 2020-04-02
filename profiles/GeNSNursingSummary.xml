@@ -1544,12 +1544,6 @@
     <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives">
       <path value="Composition.section.section" />
       <sliceName value="AdvanceDirectives" />
-      <constraint>
-        <key value="directive-custodian-1" />
-        <severity value="warning" />
-        <human value="Wenn ein Custodian angeben ist, muss es auch eine Verfügung geben." />
-        <xpath value="entry:custodian = null OR entry:directive.reference != null" />
-      </constraint>
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.code.coding.system">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
