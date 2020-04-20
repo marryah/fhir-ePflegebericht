@@ -90,6 +90,36 @@
       <path value="Observation.code.coding.code" />
       <fixedCode value="HPFL" />
     </element>
+    <element id="Observation.code.coding:hl7_2">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Observation.code.coding" />
+      <sliceName value="hl7_2" />
+    </element>
+    <element id="Observation.code.coding:hl7_2.system">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Observation.code.coding.system" />
+      <fixedUri value="https://eNursingSummary.de/fhir/Codesystem/sgb-bezug" />
+    </element>
+    <element id="Observation.code.coding:hl7_2.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Observation.code.coding.code" />
+      <fixedCode value="sgbxii_01" />
+    </element>
     <element id="Observation.subject">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
