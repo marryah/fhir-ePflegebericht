@@ -93,6 +93,9 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Condition.code.coding" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <type>
         <code value="Coding" />
         <profile value="http://hl7.org/fhir/StructureDefinition/Coding" />
@@ -103,6 +106,20 @@
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICNPCoding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/NANDACoding" />
       </type>
+    </element>
+    <element id="Condition.code.coding:icnp">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Condition.code.coding" />
+      <sliceName value="icnp" />
+      <binding>
+        <strength value="required" />
+        <description value="https://eNursingSummary.de/fhir/ValueSet/icnp-problems" />
+      </binding>
     </element>
     <element id="Condition.evidence">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
