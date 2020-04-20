@@ -3,7 +3,8 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem" />
     </meta>
     <url value="https://eNursingSummary.de/fhir/CodeSystem/icn/icnp" />
-    <name value="icnp" />
+    <name value="ICNP" />
+    <title value="International Classification of Nursing Practice"
     <status value="draft" />
     <experimental value="true" />
     <date value="2020-04-20" />
