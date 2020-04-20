@@ -2,6 +2,7 @@
     <meta>
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingAssessment" />
     </meta>
+    <id value="braden"/>
     <category>
         <coding>
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
@@ -19,5 +20,5 @@
     <subject>
         <reference value="Patient/example" />
     </subject>
-    <valueInteger value="17" />
+    <valueInteger value="11" />
 </Observation>

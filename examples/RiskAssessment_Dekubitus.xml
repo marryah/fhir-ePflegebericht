@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RiskAssessment xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value=" https://eNursingSummary.de/fhir/StructureDefinition/GeNSRiskAssessment"/>
+  </meta>
+  <id value="riskAssessment"/> 
+  <basedOn>
+    <reference value="Observation/braden"/> 
+  </basedOn>
+  <status value="final"/> 
+   <code> 
+    <coding> 
+      <system value="http://snomed.info/sct"/> 
+      <code value="225392000"/> 
+      <display value=" Pressure ulcer risk assessment (procedure)"/> 
+    </coding> 
+  </code> 
+  <subject> 
+    <reference value="Patient/example"/> 
+  </subject> 
+  <occurrenceDateTime value="2019-12-10"/> 
+  <prediction> 
+    <outcome> 
+      <coding>
+        <code value="399912005"/>
+        <system value="http://snomed.info/sct"/>
+        <display value="Pressure ulcer (disorder)"/>
+      </coding> 
+      <text value="Dekubitus"/>
+    </outcome> 
+    <qualitativeRisk>
+      <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/risk-probability"/>
+          <code value="high"/>
+          <display value="High likelihood"/>
+      </coding>
+      <text value="hohes Risiko"/>
+    </qualitativeRisk>
+  </prediction> 
+</RiskAssessment> 

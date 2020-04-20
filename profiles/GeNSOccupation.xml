@@ -59,6 +59,19 @@
         <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSPatient" />
       </type>
     </element>
+    <element id="Observation.effective[x]">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Observation.effective[x]" />
+      <type>
+        <code value="Period" />
+      </type>
+      <mustSupport value="true" />
+    </element>
     <element id="Observation.value[x]">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -70,6 +83,7 @@
       <type>
         <code value="string" />
       </type>
+      <mustSupport value="true" />
     </element>
     <element id="Observation.bodySite">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">

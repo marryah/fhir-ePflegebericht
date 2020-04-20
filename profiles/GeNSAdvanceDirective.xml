@@ -40,6 +40,16 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
   <derivation value="constraint" />
   <differential>
+    <element id="Observation.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Observation.code" />
+      <mustSupport value="true" />
+    </element>
     <element id="Observation.code.coding">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -115,6 +125,17 @@
       <type>
         <code value="Period" />
       </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.performer">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Observation.performer" />
+      <mustSupport value="true" />
     </element>
     <element id="Observation.value[x]">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -127,6 +148,7 @@
       <type>
         <code value="CodeableConcept" />
       </type>
+      <mustSupport value="true" />
     </element>
     <element id="Observation.value[x].coding">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">

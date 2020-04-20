@@ -25,6 +25,16 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
   <derivation value="constraint" />
   <differential>
+    <element id="RelatedPerson.relationship">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="RelatedPerson.relationship" />
+      <mustSupport value="true" />
+    </element>
     <element id="RelatedPerson.relationship.coding.system">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -55,6 +65,7 @@
       <path value="RelatedPerson.name" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="RelatedPerson.name.given">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -77,6 +88,7 @@
       <path value="RelatedPerson.telecom" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="RelatedPerson.telecom.system">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -107,6 +119,7 @@
       </extension>
       <path value="RelatedPerson.period" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="RelatedPerson.period.start">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">

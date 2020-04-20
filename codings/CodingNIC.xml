@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <url value="https://eNursingSummary.de/fhir/StructureDefinition/NANDACoding" />
+  <url value="https://eNursingSummary.de/fhir/StructureDefinition/NICCoding" />
   <name value="NICCoding" />
   <title value="Coding für NIC" />
   <status value="draft" />

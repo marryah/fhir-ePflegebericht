@@ -30,6 +30,16 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Procedure" />
   <derivation value="constraint" />
   <differential>
+    <element id="Procedure.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Procedure.code" />
+      <mustSupport value="true" />
+    </element>
     <element id="Procedure.code.coding">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -143,11 +153,20 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
         <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProblem" />
         <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingGoal" />
       </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.outcome">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Procedure.outcome" />
+      <mustSupport value="true" />
     </element>
     <element id="Procedure.outcome.coding">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">

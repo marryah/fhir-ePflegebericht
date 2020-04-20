@@ -63,6 +63,27 @@
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/condition-dueTo" />
       </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.verificationStatus">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Condition.verificationStatus" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Condition.code" />
+      <mustSupport value="true" />
     </element>
     <element id="Condition.code.coding">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -82,6 +103,16 @@
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICNPCoding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/NANDACoding" />
       </type>
+    </element>
+    <element id="Condition.evidence">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Condition.evidence" />
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

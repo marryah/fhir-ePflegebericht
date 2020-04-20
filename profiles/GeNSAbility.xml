@@ -74,6 +74,7 @@
       <type>
         <code value="string" />
       </type>
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

@@ -70,6 +70,7 @@
       <type>
         <code value="string" />
       </type>
+      <mustSupport value="true" />
     </element>
     <element id="Observation.bodySite">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">

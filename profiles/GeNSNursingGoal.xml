@@ -45,6 +45,16 @@
       <path value="Goal.category.coding.code" />
       <fixedCode value="nursing" />
     </element>
+    <element id="Goal.description">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Goal.description" />
+      <mustSupport value="true" />
+    </element>
     <element id="Goal.description.coding">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -76,6 +86,17 @@
         <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingAssessment" />
         <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSRiskAssessment" />
       </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Goal.outcomeCode">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Goal.outcomeCode" />
+      <mustSupport value="true" />
     </element>
     <element id="Goal.outcomeCode.coding">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
