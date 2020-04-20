@@ -6,7 +6,7 @@
       "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
     ]
   },
-  "url": "http://platzhalter.de/fhir/Codesystem/sgb-bezug",
+  "url": "https://eNursingSummary.de/fhir/Codesystem/sgb-bezug",
   "status": "draft",
   "contact": [
     {
