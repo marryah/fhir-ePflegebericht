@@ -2,7 +2,7 @@
     <meta>
         <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem" />
     </meta>
-    <url value="https://eNursingSummary.de/fhir/CodeSystem/icn/incp" />
+    <url value="https://eNursingSummary.de/fhir/CodeSystem/icn/icnp" />
     <name value="icnp" />
     <status value="draft" />
     <experimental value="true" />
