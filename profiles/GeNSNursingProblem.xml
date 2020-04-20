@@ -94,6 +94,10 @@
       </extension>
       <path value="Condition.code.coding" />
       <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
         <rules value="open" />
       </slicing>
       <type>
