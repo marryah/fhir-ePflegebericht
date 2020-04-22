@@ -103,12 +103,6 @@
       <type>
         <code value="Coding" />
         <profile value="http://hl7.org/fhir/StructureDefinition/Coding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ApenioCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/CCCCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICFCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICNPCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/NANDACoding" />
       </type>
     </element>
     <element id="Condition.code.coding:icnp">
@@ -122,8 +116,26 @@
       <sliceName value="icnp" />
       <binding>
         <strength value="required" />
-        <description value="https://eNursingSummary.de/fhir/ValueSet/icnp-problems" />
+        <valueSet value="https://eNursingSummary.de/fhir/ValueSet/icnp-problems" />
       </binding>
+    </element>
+    <element id="Condition.code.coding:@default">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Condition.code.coding" />
+      <sliceName value="@default" />
+      <type>
+        <code value="Coding" />
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ApenioCoding" />
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/CCCCoding" />
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICFCoding" />
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/NANDACoding" />
+      </type>
     </element>
     <element id="Condition.evidence">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">

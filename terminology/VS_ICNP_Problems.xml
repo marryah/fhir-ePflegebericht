@@ -27,16 +27,7 @@
 			<filter>
 				<property value="concept" />
 				<op value="is-a" />
-				<value value="10016467" />
-			</filter>
-		</include>
-		<include>
-			<system
-				value="https://eNursingSummary.de/fhir/CodeSystem/icn/incp" />
-			<filter>
-				<property value="concept" />
-				<op value="is-a" />
-				<value value="10016479" />
+				<value value="10005895" />
 			</filter>
 		</include>
 	</compose>

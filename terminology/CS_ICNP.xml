@@ -9,6 +9,8 @@
     <experimental value="true" />
     <date value="2020-04-20" />
     <publisher value="Hochschule Osnabrück, Forschungsgruppe Informatik im Gesundheitswesen" />
+	<version value="0.0"/>
+
     <contact>
         <telecom>
             <system value="other" />
@@ -18,5 +20,9 @@
     <description value="INCP Platzhalter-CodeSystem" />
     <copyright value="ICN - International Council of Nurses" />
     <caseSensitive value="true" />
-    <content value="not-present" />
+    <content value="fragment" />
+    <concept>
+    	<code value="10005895"/>
+    	<display value="Diagnosis And Outcome Phenomenon"/>
+    </concept>
 </CodeSystem>
