@@ -30,8 +30,8 @@
       <path value="Composition.type.coding" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="system" />
+          <type value="pattern" />
+          <path value="this" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -82,7 +82,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.type.coding.code" />
-      <fixedCode value="PFLG" />
+      <patternCode value="PFLG" />
     </element>
     <element id="Composition.type.coding:dvmd-kdl">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -113,7 +113,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.type.coding.code" />
-      <fixedCode value="VL160108" />
+      <patternCode value="VL160108" />
     </element>
     <element id="Composition.category">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -136,8 +136,8 @@
       <path value="Composition.category.coding" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="system" />
+          <type value="pattern" />
+          <path value="this" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -173,7 +173,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.category.coding.code" />
-      <fixedCode value="18842-5" />
+      <patternCode value="18842-5" />
     </element>
     <element id="Composition.category.coding:IHE-XDS">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -204,7 +204,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.category.coding.code" />
-      <fixedCode value="BRI" />
+      <patternCode value="BRI" />
     </element>
     <element id="Composition.subject">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -244,8 +244,8 @@
       <path value="Composition.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -291,7 +291,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.code.coding.code" />
-      <fixedCode value="34746-8" />
+      <patternCode value="34746-8" />
     </element>
     <element id="Composition.section:NursingProcess.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -313,8 +313,8 @@
       <path value="Composition.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -351,7 +351,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.code.coding.code" />
-      <fixedCode value="27593-3" />
+      <patternCode value="27593-3" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -371,8 +371,8 @@
       <path value="Composition.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -409,7 +409,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.section.code.coding.code" />
-      <fixedCode value="61146-7" />
+      <patternCode value="61146-7" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -429,8 +429,8 @@
       <path value="Composition.section.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -439,26 +439,42 @@
       <path value="Composition.section.section.section.section" />
       <sliceName value="NursingIntervention" />
     </element>
-    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.entry">
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.title">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
         <valueCode value="4.0.0" />
       </extension>
-      <path value="Composition.section.section.section.section.entry" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
-        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProcedure" />
-      </type>
+      <path value="Composition.section.section.section.section.title" />
+      <fixedString value="Pflegemaßnahme" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.code.coding.system">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.code.coding.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.section.code.coding.code" />
+      <patternCode value="29544-3" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section">
       <path value="Composition.section.section.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -466,7 +482,6 @@
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult">
       <path value="Composition.section.section.section.section.section" />
       <sliceName value="NursingResult" />
-      <short value="NursingResult" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult.title">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -478,6 +493,26 @@
       <path value="Composition.section.section.section.section.section.title" />
       <fixedString value="Pflegeergebnis" />
     </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult.code.coding.system">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult.code.coding.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.section.section.code.coding.code" />
+      <patternCode value="11383-7" />
+    </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
@@ -488,7 +523,9 @@
       <path value="Composition.section.section.section.section.section.entry" />
       <type>
         <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
       </type>
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingGoal.section:NursingIntervention.section:NursingResult.section">
@@ -527,7 +564,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.section.code.coding.code" />
-      <fixedCode value="93443-0" />
+      <patternCode value="93443-0" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:ResourceAndSupply.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -564,18 +601,31 @@
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:ResourceAndSupply.section:NursingResult.section">
       <path value="Composition.section.section.section.section.section" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <max value="0" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention">
       <path value="Composition.section.section.section" />
       <sliceName value="NursingIntervention" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.code.coding.system">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.code.coding.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.code.coding.code" />
+      <patternCode value="29544-3" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -595,8 +645,8 @@
       <path value="Composition.section.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -633,7 +683,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.section.section.code.coding.code" />
-      <fixedCode value="11383-7" />
+      <patternCode value="11383-7" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingProblem.section:NursingIntervention.section:NursingResult.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -684,7 +734,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.code.coding.code" />
-      <fixedCode value="27593-3" />
+      <patternCode value="27593-3" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingAssessment.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -707,8 +757,8 @@
       <path value="Composition.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -745,7 +795,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.section.code.coding.code" />
-      <fixedCode value="61146-7" />
+      <patternCode value="61146-7" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -765,8 +815,8 @@
       <path value="Composition.section.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -774,62 +824,6 @@
     <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention">
       <path value="Composition.section.section.section.section" />
       <sliceName value="NursingIntervention" />
-    </element>
-    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.entry">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Composition.section.section.section.section.entry" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
-        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProcedure" />
-      </type>
-    </element>
-    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section">
-      <path value="Composition.section.section.section.section.section" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section:NursingResult">
-      <path value="Composition.section.section.section.section.section" />
-      <sliceName value="NursingResult" />
-      <short value="NursingResult" />
-    </element>
-    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section:NursingResult.title">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Composition.section.section.section.section.section.title" />
-      <fixedString value="Pflegeergebnis" />
-    </element>
-    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section:NursingResult.entry">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Composition.section.section.section.section.section.entry" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
-      </type>
-    </element>
-    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingGoal.section:NursingIntervention.section:NursingResult.section">
-      <path value="Composition.section.section.section.section.section.section" />
-      <max value="0" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingAssessment.section:ResourceAndSupply">
       <path value="Composition.section.section.section" />
@@ -863,7 +857,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.section.code.coding.code" />
-      <fixedCode value="93443-0" />
+      <patternCode value="93443-0" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingAssessment.section:ResourceAndSupply.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -900,18 +894,31 @@
     </element>
     <element id="Composition.section:NursingProcess.section:NursingAssessment.section:ResourceAndSupply.section:NursingResult.section">
       <path value="Composition.section.section.section.section.section" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <max value="0" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention">
       <path value="Composition.section.section.section" />
       <sliceName value="NursingIntervention" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.code.coding.system">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.code.coding.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.code.coding.code" />
+      <patternCode value="29544-3" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -931,8 +938,8 @@
       <path value="Composition.section.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -969,7 +976,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.section.section.code.coding.code" />
-      <fixedCode value="11383-7" />
+      <patternCode value="11383-7" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingAssessment.section:NursingIntervention.section:NursingResult.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1020,7 +1027,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.code.coding.code" />
-      <fixedCode value="61146-7" />
+      <patternCode value="61146-7" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingGoal.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1040,8 +1047,8 @@
       <path value="Composition.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -1049,6 +1056,26 @@
     <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention">
       <path value="Composition.section.section.section" />
       <sliceName value="NursingIntervention" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.code.coding.system">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.code.coding.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.code.coding.code" />
+      <patternCode value="29544-3" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1068,8 +1095,8 @@
       <path value="Composition.section.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -1088,6 +1115,26 @@
       </extension>
       <path value="Composition.section.section.section.section.title" />
       <fixedString value="Pflegeergebnis" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.section:NursingResult.code.coding.system">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.section:NursingResult.code.coding.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.section.section.code.coding.code" />
+      <patternCode value="11383-7" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingGoal.section:NursingIntervention.section:NursingResult.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1110,26 +1157,42 @@
       <path value="Composition.section.section" />
       <sliceName value="NursingIntervention" />
     </element>
-    <element id="Composition.section:NursingProcess.section:NursingIntervention.entry">
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.title">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="normative" />
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
         <valueCode value="4.0.0" />
       </extension>
-      <path value="Composition.section.section.entry" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
-        <targetProfile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProcedure" />
-      </type>
+      <path value="Composition.section.section.title" />
+      <fixedString value="Pflegemaßnahme" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.code.coding.system">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.code.coding.system" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Composition.section:NursingProcess.section:NursingIntervention.code.coding.code">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="Composition.section.section.code.coding.code" />
+      <patternCode value="29544-3" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingIntervention.section">
       <path value="Composition.section.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -1166,7 +1229,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.section.code.coding.code" />
-      <fixedCode value="11383-7" />
+      <patternCode value="11383-7" />
     </element>
     <element id="Composition.section:NursingProcess.section:NursingIntervention.section:NursingResult.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1178,7 +1241,9 @@
       <path value="Composition.section.section.section.entry" />
       <type>
         <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
       </type>
     </element>
     <element id="Composition.section:NursingProcess.section:NursingIntervention.section:NursingResult.section">
@@ -1216,7 +1281,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.code.coding.code" />
-      <fixedCode value="29762-2" />
+      <patternCode value="29762-2" />
     </element>
     <element id="Composition.section:SocialInformation.code.text">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1241,8 +1306,8 @@
       <path value="Composition.section.entry" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="type" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -1320,7 +1385,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.code.coding.code" />
-      <fixedCode value="85204-6" />
+      <patternCode value="85204-6" />
     </element>
     <element id="Composition.section:HomeCareStatus.focus">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1336,8 +1401,8 @@
       <path value="Composition.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.system" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -1399,7 +1464,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.code.coding.code" />
-      <fixedCode value="93445-5" />
+      <patternCode value="93445-5" />
     </element>
     <element id="Composition.section:HomeCareStatus.section:Barrierefreiheit.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1458,7 +1523,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.code.coding.code" />
-      <fixedCode value="45473-6" />
+      <patternCode value="45473-6" />
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.focus">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1484,8 +1549,8 @@
       <path value="Composition.section.section" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="code.coding.code" />
+          <type value="pattern" />
+          <path value="code" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -1522,7 +1587,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.code.coding.code" />
-      <fixedCode value="93449-7" />
+      <patternCode value="93449-7" />
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:AppointmentGuardian.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1563,7 +1628,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.code.coding.code" />
-      <fixedCode value="42348-3" />
+      <patternCode value="42348-3" />
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:AdvanceDirectives.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1651,7 +1716,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.code.coding.code" />
-      <fixedCode value="HPFL" />
+      <patternCode value="HPFL" />
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:HelpSGBXII.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1702,7 +1767,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.section.code.coding.code" />
-      <fixedCode value="85950-4" />
+      <patternCode value="85950-4" />
     </element>
     <element id="Composition.section:ReferenceToLegalDocuments.section:NursingLevel.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1799,7 +1864,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.code.coding.code" />
-      <fixedCode value="28616-1" />
+      <patternCode value="28616-1" />
     </element>
     <element id="Composition.section:MedicalInformation.focus">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
@@ -1900,7 +1965,7 @@
         <valueCode value="4.0.0" />
       </extension>
       <path value="Composition.section.code.coding.code" />
-      <fixedCode value="55107-7" />
+      <patternCode value="55107-7" />
     </element>
     <element id="Composition.section:Addenda.entry">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
