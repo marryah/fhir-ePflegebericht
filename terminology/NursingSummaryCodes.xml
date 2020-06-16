@@ -11,9 +11,16 @@
   <name value="Codes zur Typisierung des ePflegeberichts" />
   <status value="draft" />
   <contact>
+    <name value="Mareike Przysucha" />
     <telecom>
       <system value="email" />
-      <value value="m.przysucha@hs-osnabrueck.de" />
+      <value value="epflegebericht@hs-osnabrueck.de" />
+      <use value="work" />
+    </telecom>
+    <telecom>
+      <system value="url" />
+      <value value="https://www.hs-osnabrueck.de/forschungsgruppe-informatik-im-gesundheitswesen/" />
+      <use value="work" />
     </telecom>
   </contact>
   <description value="Codes zur Beschreibung des Dokumententyps" />

@@ -10,9 +10,17 @@
   "status": "draft",
   "contact": [
     {
+      "name" : "Mareike Przysucha",
       "telecom": [
         {
-          "system": "email"
+          "system": "email",
+          "value": "epflegebericht@hs-osnabrueck.de",
+          "use": "work"
+        },
+        {
+          "system": "url",
+          "value": "https://www.hs-osnabrueck.de/forschungsgruppe-informatik-im-gesundheitswesen/",
+          "use": "work"
         }
       ]
     }

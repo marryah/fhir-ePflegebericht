@@ -3,6 +3,19 @@
   <url value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSHomeModification" />
   <name value="GeNSHomeModification" />
   <status value="draft" />
+  <contact>
+    <name value="Mareike Przysucha" />
+    <telecom>
+      <system value="email" />
+      <value value="epflegebericht@hs-osnabrueck.de" />
+      <use value="work" />
+    </telecom>
+    <telecom>
+      <system value="url" />
+      <value value="https://www.hs-osnabrueck.de/forschungsgruppe-informatik-im-gesundheitswesen/" />
+      <use value="work" />
+    </telecom>
+  </contact>
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />

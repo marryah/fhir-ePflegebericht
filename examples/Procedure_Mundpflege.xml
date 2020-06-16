@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Procedure xmlns="http://hl7.org/fhir">
-  <meta>
-    <profile value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProcedure"/>
-  </meta>
-  <id value="example"/> 
-  <status value="in-progress"/> 
-  <code>
-    <coding>
-      <system value="urn:oid:2.16.840.1.113883.6.97"/>
-      <code value="10032483"/>
-      <display value="Unterstützung bei der Mundpflege"/>
-    </coding>
-  </code>
-  <subject>
-    <reference value="Patient/example" />
-  </subject>
+	<meta>
+		<profile
+			value="https://eNursingSummary.de/fhir/StructureDefinition/GeNSNursingProcedure" />
+	</meta>
+	<id value="example" />
+	<status value="in-progress" />
+	<code>
+		<coding>
+			<system value="urn:oid:2.16.840.1.113883.6.97" />
+			<code value="10032483" />
+			<display value="Unterstützung bei der Mundpflege" />y
+			<version value="2"/>
+		</coding>
+		<coding>
+			<system value="http://snomed.info/sct" />
+			<code value="827136003" />
+			<display value="Assisting with oral hygiene (procedure)"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/example" />
+	</subject>
 </Procedure> 

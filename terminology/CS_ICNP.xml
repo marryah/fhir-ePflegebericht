@@ -1,28 +1,22 @@
 <CodeSystem xmlns="http://hl7.org/fhir">
-    <meta>
-        <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem" />
-    </meta>
-    <url value="https://eNursingSummary.de/fhir/CodeSystem/icn/icnp" />
-    <name value="ICNP" />
-    <title value="International Classification of Nursing Practice"/>
-    <status value="draft" />
-    <experimental value="true" />
-    <date value="2020-04-20" />
-    <publisher value="Hochschule Osnabrück, Forschungsgruppe Informatik im Gesundheitswesen" />
-	<version value="0.0"/>
+	<meta>
+		<profile
+			value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem" />
+	</meta>
+	<url value="https://eNursingSummary.de/fhir/CodeSystem/icn/icnp" />
+	<name value="ICNP" />
+	<title value="International Classification of Nursing Practice" />
+	<status value="draft" />
+	<experimental value="true" />
+	<date value="2020-04-20" />
+	<version value="0.0" />
 
-    <contact>
-        <telecom>
-            <system value="other" />
-            <value value="https://www.hs-osnabrueck.de/forschungsgruppe-informatik-im-gesundheitswesen/" />
-        </telecom>
-    </contact>
-    <description value="INCP Platzhalter-CodeSystem" />
-    <copyright value="ICN - International Council of Nurses" />
-    <caseSensitive value="true" />
-    <content value="fragment" />
-    <concept>
-    	<code value="10005895"/>
-    	<display value="Diagnosis And Outcome Phenomenon"/>
-    </concept>
+	<description value="INCP Platzhalter-CodeSystem" />
+	<copyright value="ICN - International Council of Nurses" />
+	<caseSensitive value="true" />
+	<content value="fragment" />
+	<concept>
+		<code value="10005895" />
+		<display value="Diagnosis And Outcome Phenomenon" />
+	</concept>
 </CodeSystem>
