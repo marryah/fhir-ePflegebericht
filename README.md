@@ -1,12 +1,12 @@
 # ePflegebericht
 
-Der ePflegebericht ist ein validierter Verlegungs- oder Transferbericht, der den Pflegekräften, 
-die die Versorgung einer pflegebedürftige Person übernehmen, einen Überblick zur aktuellen Situation dieser Person
+Der ePflegebericht ist ein validierter Verlegungs- oder Transferbericht, der den PflegekrÃ¤ften, 
+die die Versorgung einer pflegebedÃ¼rftige Person Ã¼bernehmen, einen Ãœberblick zur aktuellen Situation dieser Person
 geben soll.
 
-In diesem github-Projekt enthält die zugehörigen aktuellen FHIR-Profile, die verwendeten Terminologien und 
-Extensions sowie Beispiele für den Implementierungsleitfaden. Veröffentlicht werden sie auf Simplifier unter 
-https://simplifier.net/germanenursingsummary (Projekt) bzw. https://simplifier.net/guide/igepflegebericht/home
+In diesem github-Projekt enthÃ¤lt die zugehÃ¶rigen aktuellen FHIR-Profile, die verwendeten Terminologien und 
+Extensions sowie Beispiele fÃ¼r den Implementierungsleitfaden. VerÃ¶ffentlicht werden sie auf Simplifier unter 
+https://simplifier.net/ePflegebericht (Projekt) bzw.  https://simplifier.net/guide/epflegebericht/home
 (Implementierungsleitfaden).
 
 Hinweis: Der Leitfaden befindet sich noch im Aufbau.
