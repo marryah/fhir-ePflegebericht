@@ -39,56 +39,40 @@
   <derivation value="constraint" />
   <differential>
     <element id="Goal.category.coding.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Goal.category.coding.system" />
       <fixedUri value="http://terminology.hl7.org/CodeSystem/goal-category" />
     </element>
     <element id="Goal.category.coding.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Goal.category.coding.code" />
       <fixedCode value="nursing" />
     </element>
     <element id="Goal.description">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Goal.description" />
       <mustSupport value="true" />
     </element>
     <element id="Goal.description.coding">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Goal.description.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <type>
         <code value="Coding" />
         <profile value="http://hl7.org/fhir/StructureDefinition/Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
       </type>
     </element>
+    <element id="Goal.description.coding:snomed">
+      <path value="Goal.description.coding" />
+      <sliceName value="snomed" />
+      <fixedCoding>
+        <system value="http://snomed.info/sct" />
+      </fixedCoding>
+    </element>
     <element id="Goal.addresses">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Goal.addresses" />
       <type>
         <code value="Reference" />
@@ -102,31 +86,62 @@
       <mustSupport value="true" />
     </element>
     <element id="Goal.outcomeCode">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Goal.outcomeCode" />
       <mustSupport value="true" />
     </element>
     <element id="Goal.outcomeCode.coding">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Goal.outcomeCode.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Goal.outcomeCode.coding:apenio">
+      <path value="Goal.outcomeCode.coding" />
+      <sliceName value="apenio" />
       <type>
         <code value="Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ApenioCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/CCCCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICNPCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/NOCCoding" />
       </type>
+    </element>
+    <element id="Goal.outcomeCode.coding:CCC">
+      <path value="Goal.outcomeCode.coding" />
+      <sliceName value="CCC" />
+      <fixedCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/CCC" />
+      </fixedCoding>
+    </element>
+    <element id="Goal.outcomeCode.coding:ENP">
+      <path value="Goal.outcomeCode.coding" />
+      <sliceName value="ENP" />
+      <type>
+        <code value="Coding" />
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
+      </type>
+    </element>
+    <element id="Goal.outcomeCode.coding:ICNP">
+      <path value="Goal.outcomeCode.coding" />
+      <sliceName value="ICNP" />
+      <fixedCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/icnp" />
+      </fixedCoding>
+    </element>
+    <element id="Goal.outcomeCode.coding:NOC">
+      <path value="Goal.outcomeCode.coding" />
+      <sliceName value="NOC" />
+      <fixedCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/noc" />
+      </fixedCoding>
+    </element>
+    <element id="Goal.outcomeCode.coding:snomed">
+      <path value="Goal.outcomeCode.coding" />
+      <sliceName value="snomed" />
+      <fixedCoding>
+        <system value="http://snomed.info/sct" />
+      </fixedCoding>
     </element>
   </differential>
 </StructureDefinition>

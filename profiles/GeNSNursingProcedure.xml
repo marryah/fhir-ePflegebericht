@@ -55,10 +55,9 @@
     <element id="Procedure.code.coding:ccc">
       <path value="Procedure.code.coding" />
       <sliceName value="ccc" />
-      <type>
-        <code value="Coding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/CCCCoding" />
-      </type>
+      <fixedCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/CCC" />
+      </fixedCoding>
     </element>
     <element id="Procedure.code.coding:enp">
       <path value="Procedure.code.coding" />
@@ -71,10 +70,9 @@
     <element id="Procedure.code.coding:icnp">
       <path value="Procedure.code.coding" />
       <sliceName value="icnp" />
-      <type>
-        <code value="Coding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICNPCoding" />
-      </type>
+      <fixedCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/icnp" />
+      </fixedCoding>
     </element>
     <element id="Procedure.code.coding:lep">
       <path value="Procedure.code.coding" />
@@ -87,10 +85,16 @@
     <element id="Procedure.code.coding:nic">
       <path value="Procedure.code.coding" />
       <sliceName value="nic" />
-      <type>
-        <code value="Coding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/NICCoding" />
-      </type>
+      <fixedCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/nic" />
+      </fixedCoding>
+    </element>
+    <element id="Procedure.code.coding:snomed">
+      <path value="Procedure.code.coding" />
+      <sliceName value="snomed" />
+      <fixedCoding>
+        <system value="http://snomed.info/sct" />
+      </fixedCoding>
     </element>
     <element id="Procedure.reasonReference">
       <path value="Procedure.reasonReference" />
@@ -110,14 +114,57 @@
     </element>
     <element id="Procedure.outcome.coding">
       <path value="Procedure.outcome.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Procedure.outcome.coding:apenio">
+      <path value="Procedure.outcome.coding" />
+      <sliceName value="apenio" />
       <type>
         <code value="Coding" />
         <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ApenioCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/CCCCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICNPCoding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/NOCCoding" />
       </type>
+    </element>
+    <element id="Procedure.outcome.coding:CCC">
+      <path value="Procedure.outcome.coding" />
+      <sliceName value="CCC" />
+      <fixedCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/CCC" />
+      </fixedCoding>
+    </element>
+    <element id="Procedure.outcome.coding:ENP">
+      <path value="Procedure.outcome.coding" />
+      <sliceName value="ENP" />
+      <type>
+        <code value="Coding" />
+        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
+      </type>
+    </element>
+    <element id="Procedure.outcome.coding:ICNP">
+      <path value="Procedure.outcome.coding" />
+      <sliceName value="ICNP" />
+      <fixedCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/icnp" />
+      </fixedCoding>
+    </element>
+    <element id="Procedure.outcome.coding:NOC">
+      <path value="Procedure.outcome.coding" />
+      <sliceName value="NOC" />
+      <fixedCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/noc" />
+      </fixedCoding>
+    </element>
+    <element id="Procedure.outcome.coding:snomed">
+      <path value="Procedure.outcome.coding" />
+      <sliceName value="snomed" />
+      <fixedCoding>
+        <system value="http://snomed.info/sct" />
+      </fixedCoding>
     </element>
   </differential>
 </StructureDefinition>
