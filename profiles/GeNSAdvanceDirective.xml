@@ -163,14 +163,8 @@
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Observation.value[x].coding">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Observation.value[x].coding" />
+    <element id="Observation.valueCodeableConcept.coding">
+      <path value="Observation.valueCodeableConcept.coding" />
       <slicing>
         <discriminator>
           <type value="value" />
@@ -180,36 +174,18 @@
       </slicing>
       <min value="1" />
     </element>
-    <element id="Observation.value[x].coding:loinc">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Observation.value[x].coding" />
+    <element id="Observation.valueCodeableConcept.coding:loinc">
+      <path value="Observation.valueCodeableConcept.coding" />
       <sliceName value="loinc" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Observation.value[x].coding:loinc.system">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Observation.value[x].coding.system" />
+    <element id="Observation.valueCodeableConcept.coding:loinc.system">
+      <path value="Observation.valueCodeableConcept.coding.system" />
       <fixedUri value="http://loinc.org" />
     </element>
-    <element id="Observation.value[x].coding:loinc.code">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Observation.value[x].coding.code" />
+    <element id="Observation.valueCodeableConcept.coding:loinc.code">
+      <path value="Observation.valueCodeableConcept.coding.code" />
       <binding>
         <strength value="extensible" />
         <valueSet value="https://eNursingSummary.de/fhir/valueSet/advanceDirectivesType" />

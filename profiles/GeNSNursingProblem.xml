@@ -90,68 +90,14 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Condition.code.coding:apenio">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Condition.code.coding" />
-      <sliceName value="apenio" />
-      <type>
-        <code value="Coding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ApenioCoding" />
-      </type>
-    </element>
     <element id="Condition.code.coding:CCC">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Condition.code.coding" />
       <sliceName value="CCC" />
       <fixedCoding>
         <system value="http://terminology.hl7.org/CodeSystem/CCC" />
       </fixedCoding>
     </element>
-    <element id="Condition.code.coding:ENP">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Condition.code.coding" />
-      <sliceName value="ENP" />
-      <type>
-        <code value="Coding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
-      </type>
-    </element>
-    <element id="Condition.code.coding:ICF">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
-      <path value="Condition.code.coding" />
-      <sliceName value="ICF" />
-      <type>
-        <code value="Coding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ICFCoding" />
-      </type>
-    </element>
     <element id="Condition.code.coding:ICNP">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Condition.code.coding" />
       <sliceName value="ICNP" />
       <fixedCoding>
@@ -159,12 +105,6 @@
       </fixedCoding>
     </element>
     <element id="Condition.code.coding:NANDA">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Condition.code.coding" />
       <sliceName value="NANDA" />
       <fixedCoding>
@@ -172,12 +112,6 @@
       </fixedCoding>
     </element>
     <element id="Condition.code.coding:snomed">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Condition.code.coding" />
       <sliceName value="snomed" />
       <fixedCoding>

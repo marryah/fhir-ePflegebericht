@@ -99,14 +99,6 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Goal.outcomeCode.coding:apenio">
-      <path value="Goal.outcomeCode.coding" />
-      <sliceName value="apenio" />
-      <type>
-        <code value="Coding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ApenioCoding" />
-      </type>
-    </element>
     <element id="Goal.outcomeCode.coding:CCC">
       <path value="Goal.outcomeCode.coding" />
       <sliceName value="CCC" />
@@ -117,10 +109,6 @@
     <element id="Goal.outcomeCode.coding:ENP">
       <path value="Goal.outcomeCode.coding" />
       <sliceName value="ENP" />
-      <type>
-        <code value="Coding" />
-        <profile value="https://eNursingSummary.de/fhir/StructureDefinition/ENPCoding" />
-      </type>
     </element>
     <element id="Goal.outcomeCode.coding:ICNP">
       <path value="Goal.outcomeCode.coding" />
